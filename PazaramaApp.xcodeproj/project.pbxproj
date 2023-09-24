@@ -7,12 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D3710512AC0A939005ED639 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3710502AC0A939005ED639 /* Lottie */; };
 		8D8F0D262ABE1706003CFF30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F0D252ABE1706003CFF30 /* AppDelegate.swift */; };
 		8D8F0D282ABE1706003CFF30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F0D272ABE1706003CFF30 /* SceneDelegate.swift */; };
 		8D8F0D2A2ABE1706003CFF30 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F0D292ABE1706003CFF30 /* HomeViewController.swift */; };
 		8D8F0D2D2ABE1706003CFF30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F0D2B2ABE1706003CFF30 /* Main.storyboard */; };
 		8D8F0D2F2ABE1708003CFF30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F0D2E2ABE1708003CFF30 /* Assets.xcassets */; };
 		8D8F0D322ABE1708003CFF30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F0D302ABE1708003CFF30 /* LaunchScreen.storyboard */; };
+		8DFE335B2ABF7FD500A7846D /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE335A2ABF7FD500A7846D /* AccountController.swift */; };
+		8DFE33602ABF7FDE00A7846D /* CampaignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE335C2ABF7FDE00A7846D /* CampaignController.swift */; };
+		8DFE33612ABF7FDE00A7846D /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE335D2ABF7FDE00A7846D /* CategoriesController.swift */; };
+		8DFE33622ABF7FDE00A7846D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE335E2ABF7FDE00A7846D /* TabBarController.swift */; };
+		8DFE33632ABF7FDE00A7846D /* WalletController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFE335F2ABF7FDE00A7846D /* WalletController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,11 @@
 		8D8F0D2E2ABE1708003CFF30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D8F0D312ABE1708003CFF30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D8F0D332ABE1708003CFF30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DFE335A2ABF7FD500A7846D /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		8DFE335C2ABF7FDE00A7846D /* CampaignController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampaignController.swift; sourceTree = "<group>"; };
+		8DFE335D2ABF7FDE00A7846D /* CategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
+		8DFE335E2ABF7FDE00A7846D /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		8DFE335F2ABF7FDE00A7846D /* WalletController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D3710512AC0A939005ED639 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,9 +68,9 @@
 		8D8F0D242ABE1706003CFF30 /* PazaramaApp */ = {
 			isa = PBXGroup;
 			children = (
+				8DFE33592ABF7FC700A7846D /* TabController */,
 				8D8F0D3A2ABE1BC0003CFF30 /* Files */,
 				8D8F0D392ABE1BB8003CFF30 /* Controller */,
-				8D8F0D292ABE1706003CFF30 /* HomeViewController.swift */,
 			);
 			path = PazaramaApp;
 			sourceTree = "<group>";
@@ -66,6 +78,7 @@
 		8D8F0D392ABE1BB8003CFF30 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8D8F0D292ABE1706003CFF30 /* HomeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -81,6 +94,18 @@
 				8D8F0D332ABE1708003CFF30 /* Info.plist */,
 			);
 			name = Files;
+			sourceTree = "<group>";
+		};
+		8DFE33592ABF7FC700A7846D /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				8DFE335A2ABF7FD500A7846D /* AccountController.swift */,
+				8DFE335C2ABF7FDE00A7846D /* CampaignController.swift */,
+				8DFE335D2ABF7FDE00A7846D /* CategoriesController.swift */,
+				8DFE335E2ABF7FDE00A7846D /* TabBarController.swift */,
+				8DFE335F2ABF7FDE00A7846D /* WalletController.swift */,
+			);
+			path = TabController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +124,9 @@
 			dependencies = (
 			);
 			name = PazaramaApp;
+			packageProductDependencies = (
+				8D3710502AC0A939005ED639 /* Lottie */,
+			);
 			productName = PazaramaApp;
 			productReference = 8D8F0D222ABE1706003CFF30 /* PazaramaApp.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +155,9 @@
 				Base,
 			);
 			mainGroup = 8D8F0D192ABE1706003CFF30;
+			packageReferences = (
+				8D37104F2AC0A939005ED639 /* XCRemoteSwiftPackageReference "lottie-spm" */,
+			);
 			productRefGroup = 8D8F0D232ABE1706003CFF30 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,9 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DFE33602ABF7FDE00A7846D /* CampaignController.swift in Sources */,
 				8D8F0D2A2ABE1706003CFF30 /* HomeViewController.swift in Sources */,
 				8D8F0D262ABE1706003CFF30 /* AppDelegate.swift in Sources */,
+				8DFE33612ABF7FDE00A7846D /* CategoriesController.swift in Sources */,
+				8DFE33622ABF7FDE00A7846D /* TabBarController.swift in Sources */,
 				8D8F0D282ABE1706003CFF30 /* SceneDelegate.swift in Sources */,
+				8DFE33632ABF7FDE00A7846D /* WalletController.swift in Sources */,
+				8DFE335B2ABF7FD500A7846D /* AccountController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +410,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D37104F2AC0A939005ED639 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D3710502AC0A939005ED639 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D37104F2AC0A939005ED639 /* XCRemoteSwiftPackageReference "lottie-spm" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8D8F0D1A2ABE1706003CFF30 /* Project object */;
 }

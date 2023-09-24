@@ -17,25 +17,34 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         self.tabBar.barTintColor = .opaqueSeparator
         self.tabBar.unselectedItemTintColor = .lightGray
         self.delegate = self
+        
+
     }
     
     //MARK: - Tab Setup
     private func setupTaps() {
         
+        
+        
+        
         let home = self.createNav(with: "Ana Sayfa", and: UIImage(systemName: "house"), vc: HomeViewController())
-        let categories = self.createNav(with: "Kategoriler", and: UIImage(systemName: "list.number"), vc: CategoriesController())
-        let campaign = self.createNav(with: "Kampanyalar", and: UIImage(systemName: "percent"), vc: CampaignController())
-        let wallet = self.createNav(with: "Cüzdanım", and: UIImage(systemName: "wallet.pass"), vc: WalletController())
-        let account = self.createNav(with: "Hesabım", and: UIImage(systemName: "person.crop.circle"), vc: AccountController())
+        let categories = self.createNav(with: "Kategoriler", and: UIImage(systemName: "square.stack.3d.down.forward"), vc: CategoriesController())
+        let campaign = self.createNav(with: "Fırsatlar", and: UIImage(systemName: "flame"), vc: CampaignController())
+        let wallet = self.createNav(with: "Cüzdanım", and: UIImage(systemName: "creditcard"), vc: WalletController())
+        let account = self.createNav(with: "Hesabım", and: UIImage(systemName: "person.fill"), vc: AccountController())
  
+        
 
         
         self.setViewControllers([home, categories, campaign, wallet, account], animated: true)
     }
     private func createNav(with title:String, and image: UIImage?, vc: UIViewController) -> UINavigationController {
+        
         let nav = UINavigationController(rootViewController: vc)
+        
         nav.tabBarItem.title = title
         nav.tabBarItem.image = image
+        
         //nav.viewControllers.first?.navigationItem.title = title + "Controller"
         //nav.viewControllers.first?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Button", style: .plain, target: nil, action: nil)
         nav.isNavigationBarHidden = true
