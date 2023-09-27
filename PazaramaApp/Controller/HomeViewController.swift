@@ -9,7 +9,7 @@ import UIKit
 import Lottie
 
 class HomeViewController: UIViewController {
-//MARK: - Properties
+    //MARK: - Properties
     private let appBrandLogo = UIImageView()
     private let favoriteProductsButton = UIButton()
     private let productSearchTextField = UITextField()
@@ -32,10 +32,10 @@ class HomeViewController: UIViewController {
     private let marketLabelView = UIView()
     private let holidayLabelView = UIView()
     private let petLabelView = UIView()
-    private let categoriesLabel = UITextView()
-    private let marketLabel = UITextView()
-    private let holidayLabel = UITextView()
-    private let petLabel = UITextView()
+    private let categoriesLabel = UILabel()
+    private let marketLabel = UILabel()
+    private let holidayLabel = UILabel()
+    private let petLabel = UILabel()
     
     private let bestSellerView = UIView()
     private let bestFavoritesView = UIView()
@@ -52,10 +52,31 @@ class HomeViewController: UIViewController {
     private let ekstreIndirimiLabelView = UIView()
     private let superCekilisLabelView = UIView()
     
-    private let bestSellerLabel = UITextView()
-    private let bestFavoritesLabel = UITextView()
-    private let ekstreIndirimiLabel = UITextView()
-    private let superCekilisLabel = UITextView()
+    private let bestSellerLabel = UILabel()
+    private let bestFavoritesLabel = UILabel()
+    private let ekstreIndirimiLabel = UILabel()
+    private let superCekilisLabel = UILabel()
+    
+    private let indiriminSuperiView = UIView()
+    private let sezonOncesiFirsatView = UIView()
+    private let saatVeSaatView = UIView()
+    private let valizVeBavulView = UIView()
+    
+    private let indiriminSuperiButton = UIButton()
+    private let sezonOncesiFirsatButton = UIButton()
+    private let saatVeSaatButton = UIButton()
+    private let valizVeBavulButton = UIButton()
+    
+    private let indiriminSuperiLabelView = UIView()
+    private let sezonOncesiFirsatLabelView = UIView()
+    private let saatVeSaatLabelView = UIView()
+    private let valizVeBavulLabelView = UIView()
+    
+    private let indiriminSuperiLabel = UILabel()
+    private let sezonOncesiFirsatLabel = UILabel()
+    private let saatVeSaatLabel = UILabel()
+    private let valizVeBavulLabel = UILabel()
+    
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -63,10 +84,21 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .white
         style()
         layout()
+        func shouldAutorotate() -> Bool {
+
+
+                    return false
+                }
+
+        func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+                    return [UIInterfaceOrientationMask.portrait ]
+                }
     }
-
-
+    
 }
+    
+
+
 //MARK: - Helpers
 extension HomeViewController{
     private func style(){
@@ -121,7 +153,6 @@ extension HomeViewController{
         categoriFirstStackView.translatesAutoresizingMaskIntoConstraints = false
         categoriFirstStackView.spacing = 8
         categoriFirstStackView.axis = .horizontal
-        //categoriFirstStackView.backgroundColor = .white
         categoriFirstStackView.layer.cornerRadius = 5
         categoriFirstStackView.alignment = .center
         
@@ -129,7 +160,6 @@ extension HomeViewController{
         categoriSecondStackView.translatesAutoresizingMaskIntoConstraints = false
         categoriSecondStackView.spacing = 8
         categoriSecondStackView.axis = .horizontal
-        //categoriSecondStackView.backgroundColor =
         categoriSecondStackView.layer.cornerRadius = 5
         categoriSecondStackView.alignment = .center
 
@@ -137,8 +167,9 @@ extension HomeViewController{
         categoriThirdStackView.translatesAutoresizingMaskIntoConstraints = false
         categoriThirdStackView.spacing = 8
         categoriThirdStackView.axis = .horizontal
-        categoriThirdStackView.backgroundColor = .cyan
         categoriThirdStackView.layer.cornerRadius = 5
+        categoriSecondStackView.alignment = .center
+
         
         
         //FirstStackView
@@ -192,32 +223,24 @@ extension HomeViewController{
         categoriesLabel.font = .boldSystemFont(ofSize: 10)
         categoriesLabel.textColor = .black
         categoriesLabel.textAlignment = .center
-        categoriesLabel.isSelectable = false
-        categoriesLabel.backgroundColor = .clear
         //marketLabel style
         marketLabel.translatesAutoresizingMaskIntoConstraints = false
         marketLabel.text = "Market"
         marketLabel.font = .boldSystemFont(ofSize: 10)
         marketLabel.textColor = .black
         marketLabel.textAlignment = .center
-        marketLabel.isSelectable = false
-        marketLabel.backgroundColor = .clear
         //holidayLabel style
         holidayLabel.translatesAutoresizingMaskIntoConstraints = false
         holidayLabel.text = "Pazarama Tatil"
         holidayLabel.font = .boldSystemFont(ofSize: 10)
         holidayLabel.textColor = .black
         holidayLabel.textAlignment = .center
-        holidayLabel.isSelectable = false
-        holidayLabel.backgroundColor = .clear
         //petLabel style
         petLabel.translatesAutoresizingMaskIntoConstraints = false
         petLabel.text = "Pazarama Pet"
         petLabel.font = .boldSystemFont(ofSize: 10)
         petLabel.textColor = .black
         petLabel.textAlignment = .center
-        petLabel.isSelectable = false
-        petLabel.backgroundColor = .clear
         
         
         //SecondStackView
@@ -246,10 +269,10 @@ extension HomeViewController{
         bestFavoritesButton.setImage(UIImage(named: "pazaramaenfavoriler"), for: .normal)
         //ekstreIndirimiButton style
         ekstreIndirimiButton.translatesAutoresizingMaskIntoConstraints = false
-        ekstreIndirimiButton.setImage(UIImage(named: "pazaramatatil"), for: .normal)
+        ekstreIndirimiButton.setImage(UIImage(named: "pazaramaekstreindirimi"), for: .normal)
         //superCekilisButton style
         superCekilisButton.translatesAutoresizingMaskIntoConstraints = false
-        superCekilisButton.setImage(UIImage(named: "pazaramapet"), for: .normal)
+        superCekilisButton.setImage(UIImage(named: "pazaramasupercekilis"), for: .normal)
         
         //bestSellerLabelView style
         bestSellerLabelView.translatesAutoresizingMaskIntoConstraints = false
@@ -273,33 +296,101 @@ extension HomeViewController{
         bestSellerLabel.font = .boldSystemFont(ofSize: 10)
         bestSellerLabel.textColor = .black
         bestSellerLabel.textAlignment = .center
-        bestSellerLabel.isSelectable = false
-        bestSellerLabel.backgroundColor = .clear
         //bestFavoritesLabel style
         bestFavoritesLabel.translatesAutoresizingMaskIntoConstraints = false
         bestFavoritesLabel.text = "En Favoriler"
         bestFavoritesLabel.font = .boldSystemFont(ofSize: 10)
         bestFavoritesLabel.textColor = .black
         bestFavoritesLabel.textAlignment = .center
-        bestFavoritesLabel.isSelectable = false
-        bestFavoritesLabel.backgroundColor = .clear
         //ekstreIndirimiLabel style
         ekstreIndirimiLabel.translatesAutoresizingMaskIntoConstraints = false
         ekstreIndirimiLabel.text = "Ekstre İndirimi"
         ekstreIndirimiLabel.font = .boldSystemFont(ofSize: 10)
         ekstreIndirimiLabel.textColor = .black
         ekstreIndirimiLabel.textAlignment = .center
-        ekstreIndirimiLabel.isSelectable = false
-        ekstreIndirimiLabel.backgroundColor = .clear
         //superCekilisLabel style
         superCekilisLabel.translatesAutoresizingMaskIntoConstraints = false
         superCekilisLabel.text = "Süper Çekiliş"
         superCekilisLabel.font = .boldSystemFont(ofSize: 10)
         superCekilisLabel.textColor = .black
         superCekilisLabel.textAlignment = .center
-        superCekilisLabel.isSelectable = false
-        superCekilisLabel.backgroundColor = .clear
         
+        //ThirdStackView
+        //indiriminSuperiView style
+        indiriminSuperiView.translatesAutoresizingMaskIntoConstraints = false
+        indiriminSuperiView.backgroundColor = UIColor(rgb: 0xd9d9d9)
+        indiriminSuperiView.layer.cornerRadius = 5
+        //sezonOncesiFirsatView style
+        sezonOncesiFirsatView.translatesAutoresizingMaskIntoConstraints = false
+        sezonOncesiFirsatView.backgroundColor = UIColor(rgb: 0xd9d9d9)
+        sezonOncesiFirsatView.layer.cornerRadius = 5
+        //saatVeSaatView style
+        saatVeSaatView.translatesAutoresizingMaskIntoConstraints = false
+        saatVeSaatView.backgroundColor = UIColor(rgb: 0xd9d9d9)
+        saatVeSaatView.layer.cornerRadius = 5
+        //valizVeBavulView style
+        valizVeBavulView.translatesAutoresizingMaskIntoConstraints = false
+        valizVeBavulView.backgroundColor = UIColor(rgb: 0xd9d9d9)
+        valizVeBavulView.layer.cornerRadius = 5
+        
+        //indiriminSuperiButton style
+        indiriminSuperiButton.translatesAutoresizingMaskIntoConstraints = false
+        indiriminSuperiButton.setImage(UIImage(named: "pazaramaindiriminsuperi"), for: .normal)
+        //sezonOncesiFirsatButton style
+        sezonOncesiFirsatButton.translatesAutoresizingMaskIntoConstraints = false
+        sezonOncesiFirsatButton.setImage(UIImage(named: "pazaramasezonsonu"), for: .normal)
+        //saatVeSaatButton style
+        saatVeSaatButton.translatesAutoresizingMaskIntoConstraints = false
+        saatVeSaatButton.setImage(UIImage(named: "pazaramasaatvesaat"), for: .normal)
+        //valizVeBavulButton style
+        valizVeBavulButton.translatesAutoresizingMaskIntoConstraints = false
+        valizVeBavulButton.setImage(UIImage(named: "pazaramavaliz"), for: .normal)
+        
+        //indiriminSuperiLabelView style
+        indiriminSuperiLabelView.translatesAutoresizingMaskIntoConstraints = false
+        indiriminSuperiLabelView.layer.cornerRadius = 5
+        indiriminSuperiLabelView.backgroundColor = UIColor(rgb: 0xffffff)
+        //sezonOncesiFirsatLabelView style
+        sezonOncesiFirsatLabelView.translatesAutoresizingMaskIntoConstraints = false
+        sezonOncesiFirsatLabelView.layer.cornerRadius = 5
+        sezonOncesiFirsatLabelView.backgroundColor = UIColor(rgb: 0xffffff)
+        //saatVeSaatLabelView style
+        saatVeSaatLabelView.translatesAutoresizingMaskIntoConstraints = false
+        saatVeSaatLabelView.layer.cornerRadius = 5
+        saatVeSaatLabelView.backgroundColor = UIColor(rgb: 0xffffff)
+        //valizVeBavulLabelView style
+        valizVeBavulLabelView.translatesAutoresizingMaskIntoConstraints = false
+        valizVeBavulLabelView.layer.cornerRadius = 5
+        valizVeBavulLabelView.backgroundColor = UIColor(rgb: 0xffffff)
+        
+        //indiriminSuperiLabel style
+        indiriminSuperiLabel.translatesAutoresizingMaskIntoConstraints = false
+        indiriminSuperiLabel.text = "İndirimin Süperi"
+        indiriminSuperiLabel.font = .boldSystemFont(ofSize: 10)
+        indiriminSuperiLabel.textColor = .black
+        indiriminSuperiLabel.textAlignment = .center
+        indiriminSuperiLabel.backgroundColor = .clear
+        //sezonOncesiFirsatLabel style
+        sezonOncesiFirsatLabel.translatesAutoresizingMaskIntoConstraints = false
+        sezonOncesiFirsatLabel.text = "Sezon Sonu"
+        sezonOncesiFirsatLabel.font = .boldSystemFont(ofSize: 10)
+        sezonOncesiFirsatLabel.textColor = .black
+        sezonOncesiFirsatLabel.textAlignment = .center
+        sezonOncesiFirsatLabel.backgroundColor = .clear
+        //saatVeSaatLabel style
+        saatVeSaatLabel.translatesAutoresizingMaskIntoConstraints = false
+        saatVeSaatLabel.text = "Saat ve Saat"
+        saatVeSaatLabel.font = .boldSystemFont(ofSize: 10)
+        saatVeSaatLabel.textColor = .black
+        saatVeSaatLabel.textAlignment = .center
+        saatVeSaatLabel.backgroundColor = .clear
+        //valizVeBavulLabel style
+        valizVeBavulLabel.translatesAutoresizingMaskIntoConstraints = false
+        valizVeBavulLabel.text = "Valizlerde Fırsat"
+        valizVeBavulLabel.font = .boldSystemFont(ofSize: 10)
+        valizVeBavulLabel.textColor = .black
+        valizVeBavulLabel.textAlignment = .center
+        valizVeBavulLabel.backgroundColor = .clear
     }
     private func layout(){
         view.addSubview(productSearchTextField)
@@ -344,6 +435,23 @@ extension HomeViewController{
         bestFavoritesLabelView.addSubview(bestFavoritesLabel)
         ekstreIndirimiLabelView.addSubview(ekstreIndirimiLabel)
         superCekilisLabelView.addSubview(superCekilisLabel)
+        //ThirdStackView
+        categoriThirdStackView.addArrangedSubview(indiriminSuperiView)
+        categoriThirdStackView.addArrangedSubview(sezonOncesiFirsatView)
+        categoriThirdStackView.addArrangedSubview(saatVeSaatView)
+        categoriThirdStackView.addArrangedSubview(valizVeBavulView)
+        indiriminSuperiView.addSubview(indiriminSuperiButton)
+        sezonOncesiFirsatView.addSubview(sezonOncesiFirsatButton)
+        saatVeSaatView.addSubview(saatVeSaatButton)
+        valizVeBavulView.addSubview(valizVeBavulButton)
+        indiriminSuperiView.addSubview(indiriminSuperiLabelView)
+        sezonOncesiFirsatView.addSubview(sezonOncesiFirsatLabelView)
+        saatVeSaatView.addSubview(saatVeSaatLabelView)
+        valizVeBavulView.addSubview(valizVeBavulLabelView)
+        indiriminSuperiLabelView.addSubview(indiriminSuperiLabel)
+        sezonOncesiFirsatLabelView.addSubview(sezonOncesiFirsatLabel)
+        saatVeSaatLabelView.addSubview(saatVeSaatLabel)
+        valizVeBavulLabelView.addSubview(valizVeBavulLabel)
         
         NSLayoutConstraint.activate([
             //favoriteProductsButton layout
@@ -379,12 +487,12 @@ extension HomeViewController{
             categoriFirstStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             categoriFirstStackView.heightAnchor.constraint(equalToConstant: 120),
             //categoriSecondStackView layout
-            categoriSecondStackView.topAnchor.constraint(equalTo: categoriFirstStackView.bottomAnchor, constant: 8),
+            categoriSecondStackView.topAnchor.constraint(equalTo: categoriFirstStackView.bottomAnchor),
             categoriSecondStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             categoriSecondStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             categoriSecondStackView.heightAnchor.constraint(equalToConstant: 120),
             //categoriThirdStackView layout
-            categoriThirdStackView.topAnchor.constraint(equalTo: categoriSecondStackView.bottomAnchor, constant: 8),
+            categoriThirdStackView.topAnchor.constraint(equalTo: categoriSecondStackView.bottomAnchor,constant: 4),
             categoriThirdStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             categoriThirdStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             categoriThirdStackView.heightAnchor.constraint(equalToConstant: 120),
@@ -515,7 +623,69 @@ extension HomeViewController{
             superCekilisLabel.widthAnchor.constraint(equalTo: superCekilisLabelView.widthAnchor),
             superCekilisLabel.heightAnchor.constraint(equalTo: superCekilisLabelView.heightAnchor),
             
+            //ThirdStackView icons layout
+            indiriminSuperiView.widthAnchor.constraint(equalToConstant: 88),
+            indiriminSuperiView.heightAnchor.constraint(equalToConstant: 114),
+            sezonOncesiFirsatView.widthAnchor.constraint(equalToConstant: 89),
+            sezonOncesiFirsatView.heightAnchor.constraint(equalToConstant: 114),
+            saatVeSaatView.widthAnchor.constraint(equalToConstant: 88),
+            saatVeSaatView.heightAnchor.constraint(equalToConstant: 114),
+            valizVeBavulView.widthAnchor.constraint(equalToConstant: 88),
+            valizVeBavulView.heightAnchor.constraint(equalToConstant: 114),
             
+            //ThirdStackView
+            //indiriminSuperiButton layout
+            indiriminSuperiButton.topAnchor.constraint(equalTo: indiriminSuperiView.topAnchor, constant: 2),
+            indiriminSuperiButton.leadingAnchor.constraint(equalTo: indiriminSuperiView.leadingAnchor, constant: 2),
+            indiriminSuperiButton.trailingAnchor.constraint(equalTo: indiriminSuperiView.trailingAnchor, constant: -4),
+            indiriminSuperiButton.bottomAnchor.constraint(equalTo: indiriminSuperiView.bottomAnchor, constant: -27),
+            //sezonOncesiFirsatButton layout
+            sezonOncesiFirsatButton.topAnchor.constraint(equalTo: sezonOncesiFirsatView.topAnchor, constant: 2),
+            sezonOncesiFirsatButton.leadingAnchor.constraint(equalTo: sezonOncesiFirsatView.leadingAnchor, constant: 2),
+            sezonOncesiFirsatButton.trailingAnchor.constraint(equalTo: sezonOncesiFirsatView.trailingAnchor, constant: -4),
+            sezonOncesiFirsatButton.bottomAnchor.constraint(equalTo: sezonOncesiFirsatView.bottomAnchor, constant: -27),
+            //saatVeSaatButton layout
+            saatVeSaatButton.topAnchor.constraint(equalTo: saatVeSaatView.topAnchor, constant: 2),
+            saatVeSaatButton.leadingAnchor.constraint(equalTo: saatVeSaatView.leadingAnchor, constant: 2),
+            saatVeSaatButton.trailingAnchor.constraint(equalTo: saatVeSaatView.trailingAnchor, constant: -4),
+            saatVeSaatButton.bottomAnchor.constraint(equalTo: saatVeSaatView.bottomAnchor, constant: -27),
+            //valizVeBavulButton layout
+            valizVeBavulButton.topAnchor.constraint(equalTo: valizVeBavulView.topAnchor, constant: 2),
+            valizVeBavulButton.leadingAnchor.constraint(equalTo: valizVeBavulView.leadingAnchor, constant: 2),
+            valizVeBavulButton.trailingAnchor.constraint(equalTo: valizVeBavulView.trailingAnchor, constant: -4),
+            valizVeBavulButton.bottomAnchor.constraint(equalTo: valizVeBavulView.bottomAnchor, constant: -27),
+            //indiriminSuperiLabelView layout
+            indiriminSuperiLabelView.topAnchor.constraint(equalTo: indiriminSuperiButton.bottomAnchor),
+            indiriminSuperiLabelView.leadingAnchor.constraint(equalTo: indiriminSuperiView.leadingAnchor,constant: 2),
+            indiriminSuperiLabelView.trailingAnchor.constraint(equalTo: indiriminSuperiView.trailingAnchor, constant: -2),
+            indiriminSuperiLabelView.bottomAnchor.constraint(equalTo: indiriminSuperiView.bottomAnchor, constant: -2),
+            //sezonOncesiFirsatLabelView layout
+            sezonOncesiFirsatLabelView.topAnchor.constraint(equalTo: sezonOncesiFirsatButton.bottomAnchor),
+            sezonOncesiFirsatLabelView.leadingAnchor.constraint(equalTo: sezonOncesiFirsatView.leadingAnchor,constant: 2),
+            sezonOncesiFirsatLabelView.trailingAnchor.constraint(equalTo: sezonOncesiFirsatView.trailingAnchor, constant: -2),
+            sezonOncesiFirsatLabelView.bottomAnchor.constraint(equalTo: sezonOncesiFirsatView.bottomAnchor, constant: -2),
+            //saatVeSaatLabelView layout
+            saatVeSaatLabelView.topAnchor.constraint(equalTo: saatVeSaatButton.bottomAnchor),
+            saatVeSaatLabelView.leadingAnchor.constraint(equalTo: saatVeSaatView.leadingAnchor,constant: 2),
+            saatVeSaatLabelView.trailingAnchor.constraint(equalTo: saatVeSaatView.trailingAnchor, constant: -2),
+            saatVeSaatLabelView.bottomAnchor.constraint(equalTo: saatVeSaatView.bottomAnchor, constant: -2),
+            //valizVeBavulLabelView layout
+            valizVeBavulLabelView.topAnchor.constraint(equalTo: valizVeBavulButton.bottomAnchor),
+            valizVeBavulLabelView.leadingAnchor.constraint(equalTo: valizVeBavulView.leadingAnchor,constant: 2),
+            valizVeBavulLabelView.trailingAnchor.constraint(equalTo: valizVeBavulView.trailingAnchor, constant: -2),
+            valizVeBavulLabelView.bottomAnchor.constraint(equalTo: valizVeBavulView.bottomAnchor, constant: -2),
+            //indiriminSuperiLabel layout
+            indiriminSuperiLabel.widthAnchor.constraint(equalTo: indiriminSuperiLabelView.widthAnchor),
+            indiriminSuperiLabel.heightAnchor.constraint(equalTo: indiriminSuperiLabelView.heightAnchor),
+            //sezonOncesiFirsatLabel layout
+            sezonOncesiFirsatLabel.widthAnchor.constraint(equalTo: sezonOncesiFirsatLabelView.widthAnchor),
+            sezonOncesiFirsatLabel.heightAnchor.constraint(equalTo: sezonOncesiFirsatLabelView.heightAnchor),
+            //saatVeSaatLabel layout
+            saatVeSaatLabel.widthAnchor.constraint(equalTo: saatVeSaatLabelView.widthAnchor),
+            saatVeSaatLabel.heightAnchor.constraint(equalTo: saatVeSaatLabelView.heightAnchor),
+            //valizVeBavulLabel layout
+            valizVeBavulLabel.widthAnchor.constraint(equalTo: valizVeBavulLabelView.widthAnchor),
+            valizVeBavulLabel.heightAnchor.constraint(equalTo: valizVeBavulLabelView.heightAnchor),
         ])
     }
     private func makeStackViewButtons(with image:UIImage?,and title:String, vc:UIViewController) -> UINavigationController {
