@@ -137,7 +137,7 @@ extension HomeViewController{
         productSearchTextField.isOpaque = true
         productSearchTextField.addSubview(searchRightImageView)
         
-        //favoriteProducts style
+        //favoriteProductsButton style
         favoriteProductsButton.translatesAutoresizingMaskIntoConstraints = false
         favoriteProductsButton.setImage(UIImage(named: "favoriteProductsIcon"), for: .normal)
         //notificationsButton style
@@ -170,7 +170,6 @@ extension HomeViewController{
         categoriThirdStackView.layer.cornerRadius = 5
         categoriSecondStackView.alignment = .center
 
-        
         
         //FirstStackView
         //categoriesView style
