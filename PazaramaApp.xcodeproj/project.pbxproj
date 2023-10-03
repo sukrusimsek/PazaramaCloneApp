@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D2C181C2ACCC26D005A0E64 /* CreateWalletScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2C181B2ACCC26D005A0E64 /* CreateWalletScreenController.swift */; };
 		8D3710512AC0A939005ED639 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8D3710502AC0A939005ED639 /* Lottie */; };
 		8D8F0D262ABE1706003CFF30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F0D252ABE1706003CFF30 /* AppDelegate.swift */; };
 		8D8F0D282ABE1706003CFF30 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F0D272ABE1706003CFF30 /* SceneDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8D2C181B2ACCC26D005A0E64 /* CreateWalletScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletScreenController.swift; sourceTree = "<group>"; };
 		8D8F0D222ABE1706003CFF30 /* PazaramaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PazaramaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8F0D252ABE1706003CFF30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D8F0D272ABE1706003CFF30 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				8DFE33592ABF7FC700A7846D /* TabController */,
 				8D8F0D3A2ABE1BC0003CFF30 /* Files */,
 				8D8F0D392ABE1BB8003CFF30 /* Controller */,
+				8D2C181B2ACCC26D005A0E64 /* CreateWalletScreenController.swift */,
 			);
 			path = PazaramaApp;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				8D8F0D262ABE1706003CFF30 /* AppDelegate.swift in Sources */,
 				8DFE33612ABF7FDE00A7846D /* CategoriesController.swift in Sources */,
 				8DFE33622ABF7FDE00A7846D /* TabBarController.swift in Sources */,
+				8D2C181C2ACCC26D005A0E64 /* CreateWalletScreenController.swift in Sources */,
 				8D8F0D282ABE1706003CFF30 /* SceneDelegate.swift in Sources */,
 				8DFE33632ABF7FDE00A7846D /* WalletController.swift in Sources */,
 				8DFE335B2ABF7FD500A7846D /* AccountController.swift in Sources */,
