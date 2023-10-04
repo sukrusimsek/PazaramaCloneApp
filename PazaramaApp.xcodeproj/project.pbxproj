@@ -73,7 +73,6 @@
 				8DFE33592ABF7FC700A7846D /* TabController */,
 				8D8F0D3A2ABE1BC0003CFF30 /* Files */,
 				8D8F0D392ABE1BB8003CFF30 /* Controller */,
-				8D2C181B2ACCC26D005A0E64 /* CreateWalletScreenController.swift */,
 			);
 			path = PazaramaApp;
 			sourceTree = "<group>";
@@ -82,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				8D8F0D292ABE1706003CFF30 /* HomeViewController.swift */,
+				8D2C181B2ACCC26D005A0E64 /* CreateWalletScreenController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

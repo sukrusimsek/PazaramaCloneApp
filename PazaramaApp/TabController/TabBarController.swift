@@ -45,8 +45,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         nav.tabBarItem.title = title
         nav.tabBarItem.image = image
         
-        //nav.viewControllers.first?.navigationItem.title = title + "Controller"
-        //nav.viewControllers.first?.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Button", style: .plain, target: nil, action: nil)
+        
         nav.isNavigationBarHidden = true
 
         return nav
@@ -58,6 +57,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             alertForCampaign.addAction(UIAlertAction(title: "Tamam", style: .default))
             self.present(alertForCampaign, animated: true)
         }
+        /*if self.selectedIndex == 3 {
+            let alertForCampaign = UIAlertController(title: "Pazarama Cüzdan Fırsatını Kaçırmayın", message: "Avantajlı ve Güvenli Alışveriş için", preferredStyle: .alert)
+            alertForCampaign.addAction(UIAlertAction(title: "Tamam", style: .default))
+            self.present(alertForCampaign, animated: true)
+        }*/
     }
     
 }
