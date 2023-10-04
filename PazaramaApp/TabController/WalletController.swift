@@ -14,7 +14,6 @@ class WalletController: UIViewController {
     private let campaingInWallet = UILabel()
     private let createWalletButton = UIButton()
     private let descriptionForWallet = UILabel()
-    
     private let whatIsTheWallet = UILabel()
     private let descriptionUIView = UIView()
     private let descriptionUIView2 = UIView()
