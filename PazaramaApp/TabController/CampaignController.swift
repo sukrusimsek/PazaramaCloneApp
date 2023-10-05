@@ -17,8 +17,6 @@ class CampaignController: UIViewController {
     override func viewDidLoad() {
         //super.viewDidLoad()
         view.backgroundColor = .white
-       
-        style()
         layout2()
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -30,17 +28,9 @@ class CampaignController: UIViewController {
 
     //MARK: - Helpers
 extension CampaignController {
-    
-    
-    private func style() {
-        
-        
-        
-    }
     private func layout2() {
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,8 +40,6 @@ extension CampaignController {
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            
-
         ])
     }
 }
@@ -74,8 +62,6 @@ extension CampaignController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Detay Sayfasına Gidilecek \(indexPath.row)")
     }
-    
-    
 }
 class CustomCell: UICollectionViewCell {
     let imageImageView = UIImageView()
@@ -84,9 +70,9 @@ class CustomCell: UICollectionViewCell {
         super.init(frame: frame)
         addSubview(imageImageView)
         imageImageView.translatesAutoresizingMaskIntoConstraints = false
-        
         imageImageView.layer.cornerRadius = 10
         imageImageView.layer.masksToBounds = true
+        
         NSLayoutConstraint.activate([
             imageImageView.topAnchor.constraint(equalTo: topAnchor),
             imageImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
