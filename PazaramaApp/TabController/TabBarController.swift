@@ -13,12 +13,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.setupTaps()
         self.selectedIndex = 0
-        self.tabBar.tintColor = .systemBlue
-        self.tabBar.barTintColor = .opaqueSeparator
+        //self.tabBar.tintColor = .systemBlue
+        //self.tabBar.barTintColor = .opaqueSeparator
         self.tabBar.unselectedItemTintColor = .lightGray
         self.delegate = self
         
-
     }
     
     //MARK: - Tab Setup
@@ -44,8 +43,6 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         
         nav.tabBarItem.title = title
         nav.tabBarItem.image = image
-        
-        
         nav.isNavigationBarHidden = true
 
         return nav
@@ -57,11 +54,8 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
             alertForCampaign.addAction(UIAlertAction(title: "Tamam", style: .default))
             self.present(alertForCampaign, animated: true)
         }
-        /*if self.selectedIndex == 3 {
-            let alertForCampaign = UIAlertController(title: "Pazarama Cüzdan Fırsatını Kaçırmayın", message: "Avantajlı ve Güvenli Alışveriş için", preferredStyle: .alert)
-            alertForCampaign.addAction(UIAlertAction(title: "Tamam", style: .default))
-            self.present(alertForCampaign, animated: true)
-        }*/
+        
     }
+    
     
 }

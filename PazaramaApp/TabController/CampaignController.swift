@@ -17,26 +17,18 @@ class CampaignController: UIViewController {
     override func viewDidLoad() {
         //super.viewDidLoad()
         view.backgroundColor = .white
-       
-        style()
         layout2()
         collectionView.dataSource = self
         collectionView.delegate = self
         
-        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(CustomCellForCampaign.self, forCellWithReuseIdentifier: "cell")
         
     }
 }
 
     //MARK: - Helpers
 extension CampaignController {
-    
-    
-    private func style() {
-        
-        
-        
-    }
+
     private func layout2() {
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -67,7 +59,7 @@ extension CampaignController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCellForCampaign
         cell.imageImageView.image = UIImage(named: images[indexPath.row])
         return cell
     }
@@ -77,7 +69,7 @@ extension CampaignController: UICollectionViewDataSource {
     
     
 }
-class CustomCell: UICollectionViewCell {
+class CustomCellForCampaign: UICollectionViewCell {
     let imageImageView = UIImageView()
     
     override init(frame: CGRect) {
