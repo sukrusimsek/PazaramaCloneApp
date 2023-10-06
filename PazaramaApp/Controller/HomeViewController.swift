@@ -111,7 +111,7 @@ extension HomeViewController{
         productSearchTextField.translatesAutoresizingMaskIntoConstraints = false
         productSearchTextField.placeholder = "Marka, ürün veya hizmet arayın"
         productSearchTextField.borderStyle = .roundedRect
-        productSearchTextField.textColor = .systemGray
+        productSearchTextField.textColor = .black
         productSearchTextField.font = .systemFont(ofSize: 13)
         
         //searchLeftImageView style

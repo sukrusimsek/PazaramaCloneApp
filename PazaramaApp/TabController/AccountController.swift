@@ -43,7 +43,7 @@ extension AccountController{
         myBox.tintColor = .black
         
         favoriteProductsButton.translatesAutoresizingMaskIntoConstraints = false
-        favoriteProductsButton.setImage(UIImage(systemName: "star"), for: .normal)
+        favoriteProductsButton.setImage(UIImage(named: "favoriteProductsIcon"), for: .normal)
         favoriteProductsButton.tintColor = .black
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -76,7 +76,7 @@ extension AccountController{
             tableView.topAnchor.constraint(equalTo: accountName.bottomAnchor, constant: 8),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
-            //tableView.bottomAnchor.constraint
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
             
         ])
         

@@ -28,13 +28,10 @@ class CampaignController: UIViewController {
 
     //MARK: - Helpers
 extension CampaignController {
-<<<<<<< HEAD
-
-=======
->>>>>>> 5b07e477b009a201bbed9d0e63d24dc4edb9d81b
     private func layout2() {
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
         
         view.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +41,8 @@ extension CampaignController {
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+
         ])
     }
 }
@@ -66,6 +65,8 @@ extension CampaignController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Detay Sayfasına Gidilecek \(indexPath.row)")
     }
+    
+    
 }
 class CustomCellForCampaign: UICollectionViewCell {
     let imageImageView = UIImageView()
@@ -74,9 +75,9 @@ class CustomCellForCampaign: UICollectionViewCell {
         super.init(frame: frame)
         addSubview(imageImageView)
         imageImageView.translatesAutoresizingMaskIntoConstraints = false
+        
         imageImageView.layer.cornerRadius = 10
         imageImageView.layer.masksToBounds = true
-        
         NSLayoutConstraint.activate([
             imageImageView.topAnchor.constraint(equalTo: topAnchor),
             imageImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
