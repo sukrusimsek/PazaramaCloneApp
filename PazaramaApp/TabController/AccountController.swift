@@ -12,7 +12,7 @@ class AccountController: UIViewController {
     private let accountName = UILabel()
     private let myBox = UIButton()
     private let favoriteProductsButton = UIButton()
-    private let tableView = UITableView()
+    let tableView = UITableView()
     var itemsToLoad: [String] = ["Siparişlerim", "Taleplerim", "Beğendiklerim","Kuponlarım","Puanlarım","Değerlendirmelerim"]
     
     //MARK: - Lifecycle
@@ -24,7 +24,8 @@ class AccountController: UIViewController {
         view.backgroundColor = .white
         tableView.dataSource = self
         tableView.delegate = self
-        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+
         
     }
 }
@@ -88,10 +89,15 @@ extension AccountController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
-            cell.textLabel?.text = self.itemsToLoad[indexPath.row]
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+            cell.textLabel?.text = itemsToLoad[indexPath.row]
             return cell
         }
-    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 20.0
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 5
+    }
 }
     

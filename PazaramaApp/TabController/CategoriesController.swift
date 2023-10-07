@@ -25,7 +25,7 @@ class CategoriesController: UIViewController {
         layoutController()
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(CustomCellForCampaign.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(CustomCellForCategories.self, forCellWithReuseIdentifier: "cell")
 
     }
 
@@ -75,11 +75,12 @@ extension CategoriesController {
         view.addSubview(myBoxIcon)
         view.addSubview(productSearchTextField)
         
+        
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: productSearchTextField.bottomAnchor,constant: 10),
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor,constant: 15),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor,constant: -15),
             collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
             allCategoriesLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
@@ -112,6 +113,9 @@ extension CategoriesController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width/2 - 20, height: view.frame.height/8)
     }
+    /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
+    }*/
     
 }
 
@@ -121,8 +125,14 @@ extension CategoriesController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCellForCampaign
-        cell.imageImageView.image = UIImage(named: images[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCellForCategories
+        cell.imageView.image = UIImage(named: images[indexPath.row])
+        cell.layer.borderWidth = 0.5
+        cell.layer.borderColor = UIColor.gray.cgColor
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
+        
+        
         return cell
         
     }
@@ -130,21 +140,18 @@ extension CategoriesController: UICollectionViewDataSource {
         print("Detay Sayfasına Gdilecek \(indexPath.row)")
     }
     
-    
 }
+
 
 class CustomCellForCategories: UICollectionViewCell {
     let imageView = UIImageView()
     
+    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        
-        imageView.layer.cornerRadius = 10
-        imageView.layer.borderColor = UIColor.black.cgColor
-        imageView.layer.masksToBounds = true
-        imageView.layer.borderWidth = 0.5
         
         
         NSLayoutConstraint.activate([
@@ -153,11 +160,16 @@ class CustomCellForCategories: UICollectionViewCell {
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
+            
+            
         ])
     }
+    
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
     
 }
