@@ -28,7 +28,7 @@ class AccountController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-
+        
         
     }
 }
@@ -71,7 +71,6 @@ extension AccountController{
             myBox.widthAnchor.constraint(equalToConstant: 24),
             myBox.heightAnchor.constraint(equalToConstant: 24),
             
-            favoriteProductsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
             favoriteProductsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 12),
             favoriteProductsButton.leadingAnchor.constraint(equalTo: myBox.trailingAnchor, constant: 30),
             favoriteProductsButton.widthAnchor.constraint(equalToConstant: 24),
@@ -107,7 +106,7 @@ extension AccountController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = itemsToLoad[indexPath.section][indexPath.row]
-        cell.backgroundColor = .lightGray
+        cell.backgroundColor = .white
         return cell
         }
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -126,7 +125,7 @@ extension AccountController: UITableViewDelegate, UITableViewDataSource{
         let label1 = UILabel()
         label1.frame = CGRect(x: 16, y: 5, width: headerView.frame.width-32, height: 15)
         label1.text = self.tableView(tableView, titleForHeaderInSection: section)
-        label1.font = .systemFont(ofSize: 18)
+        label1.font = .boldSystemFont(ofSize: 18)
         label1.textColor = .black
         headerView.addSubview(label1)
         

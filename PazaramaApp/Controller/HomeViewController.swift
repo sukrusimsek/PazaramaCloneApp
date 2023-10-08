@@ -77,6 +77,9 @@ class HomeViewController: UIViewController {
     private let saatVeSaatLabel = UILabel()
     private let valizVeBavulLabel = UILabel()
     
+    let imagesForSurprise = ["1","2","3","4","5","6","7"]
+    
+    var collectionViewForHomeScreen: UICollectionView!
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -84,17 +87,17 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .white
         style()
         layout()
+        collectionViewForHomeScreen.dataSource = self
+        collectionViewForHomeScreen.delegate = self
+        
         func shouldAutorotate() -> Bool {
-
-
                     return false
                 }
-
         func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
                     return [UIInterfaceOrientationMask.portrait ]
                 }
+        collectionViewForHomeScreen.register(CustomCellForHomeScreen.self, forCellWithReuseIdentifier: "cell")
     }
-    
 }
     
 
@@ -390,6 +393,9 @@ extension HomeViewController{
         valizVeBavulLabel.textColor = .black
         valizVeBavulLabel.textAlignment = .center
         valizVeBavulLabel.backgroundColor = .clear
+        
+        
+        
     }
     private func layout(){
         view.addSubview(productSearchTextField)
@@ -400,6 +406,22 @@ extension HomeViewController{
         view.addSubview(categoriFirstStackView)
         view.addSubview(categoriSecondStackView)
         view.addSubview(categoriThirdStackView)
+        
+        let layout1 = UICollectionViewFlowLayout()
+        collectionViewForHomeScreen = UICollectionView(frame: .zero, collectionViewLayout: layout1)
+        view.addSubview(collectionViewForHomeScreen)
+        collectionViewForHomeScreen.translatesAutoresizingMaskIntoConstraints = false
+
+        
+        
+        collectionViewForHomeScreen.topAnchor.constraint(equalTo: categoriThirdStackView.bottomAnchor, constant: 8).isActive = true
+        collectionViewForHomeScreen.leadingAnchor.constraint(equalTo: categoriThirdStackView.leadingAnchor).isActive = true
+        collectionViewForHomeScreen.trailingAnchor.constraint(equalTo: categoriThirdStackView.trailingAnchor).isActive = true
+        collectionViewForHomeScreen.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        
+        
+        
+        
         //FirstStackView
         categoriFirstStackView.addArrangedSubview(categoriesView)
         categoriFirstStackView.addArrangedSubview(marketView)
@@ -695,6 +717,51 @@ extension HomeViewController{
         }
     
     }
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.frame.width - 20, height: view.frame.height/5)
+    }
+}
+
+extension HomeViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return imagesForSurprise.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionViewForHomeScreen.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCellForHomeScreen
+        cell.imageView.image = UIImage(named: imagesForSurprise[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Detay Sayfasına Gidilecek Home Screen \(indexPath.row)")
+    }
+}
+
+
+class CustomCellForHomeScreen: UICollectionViewCell {
+    let imageView = UIImageView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+        ])
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
 extension UIColor {
     convenience init(rgb: UInt) {
