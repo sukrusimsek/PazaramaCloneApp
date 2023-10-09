@@ -36,47 +36,40 @@ class HomeViewController: UIViewController {
     private let marketLabel = UILabel()
     private let holidayLabel = UILabel()
     private let petLabel = UILabel()
-    
     private let bestSellerView = UIView()
     private let bestFavoritesView = UIView()
     private let ekstreIndirimiView = UIView()
     private let superCekilisView = UIView()
-    
     private let bestSellerButton = UIButton()
     private let bestFavoritesButton = UIButton()
     private let ekstreIndirimiButton = UIButton()
     private let superCekilisButton = UIButton()
-    
     private let bestSellerLabelView = UIView()
     private let bestFavoritesLabelView = UIView()
     private let ekstreIndirimiLabelView = UIView()
     private let superCekilisLabelView = UIView()
-    
     private let bestSellerLabel = UILabel()
     private let bestFavoritesLabel = UILabel()
     private let ekstreIndirimiLabel = UILabel()
     private let superCekilisLabel = UILabel()
-    
     private let indiriminSuperiView = UIView()
     private let sezonOncesiFirsatView = UIView()
     private let saatVeSaatView = UIView()
     private let valizVeBavulView = UIView()
-    
     private let indiriminSuperiButton = UIButton()
     private let sezonOncesiFirsatButton = UIButton()
     private let saatVeSaatButton = UIButton()
     private let valizVeBavulButton = UIButton()
-    
     private let indiriminSuperiLabelView = UIView()
     private let sezonOncesiFirsatLabelView = UIView()
     private let saatVeSaatLabelView = UIView()
     private let valizVeBavulLabelView = UIView()
-    
     private let indiriminSuperiLabel = UILabel()
     private let sezonOncesiFirsatLabel = UILabel()
     private let saatVeSaatLabel = UILabel()
     private let valizVeBavulLabel = UILabel()
-    
+    private let isBankasiImage = UIImageView()
+    private let isBankasiCoins = UIImageView()
     let imagesForSurprise = ["1","2","3","4","5","6","7"]
     
     var collectionViewForHomeScreen: UICollectionView!
@@ -394,6 +387,17 @@ extension HomeViewController{
         valizVeBavulLabel.textAlignment = .center
         valizVeBavulLabel.backgroundColor = .clear
         
+        //isBankasiImage style
+        isBankasiImage.translatesAutoresizingMaskIntoConstraints = false
+        isBankasiImage.image = UIImage(named: "pazaramaistirak")
+        isBankasiImage.layer.cornerRadius = 5
+        isBankasiImage.clipsToBounds = true
+        
+        //isBankasiCoins style
+        isBankasiCoins.translatesAutoresizingMaskIntoConstraints = false
+        isBankasiCoins.image = UIImage(named: "pazaramacoins")
+        isBankasiCoins.layer.cornerRadius = 5
+        isBankasiCoins.clipsToBounds = true
         
         
     }
@@ -406,21 +410,18 @@ extension HomeViewController{
         view.addSubview(categoriFirstStackView)
         view.addSubview(categoriSecondStackView)
         view.addSubview(categoriThirdStackView)
+        view.addSubview(isBankasiImage)
+        view.addSubview(isBankasiCoins)
         
         let layout1 = UICollectionViewFlowLayout()
         collectionViewForHomeScreen = UICollectionView(frame: .zero, collectionViewLayout: layout1)
         view.addSubview(collectionViewForHomeScreen)
         collectionViewForHomeScreen.translatesAutoresizingMaskIntoConstraints = false
-
         
-        
-        collectionViewForHomeScreen.topAnchor.constraint(equalTo: categoriThirdStackView.bottomAnchor, constant: 8).isActive = true
+        //collectionViewForHomeScreen.topAnchor.constraint(equalTo: isBankasiImage.bottomAnchor, constant: 8).isActive = true
         collectionViewForHomeScreen.leadingAnchor.constraint(equalTo: categoriThirdStackView.leadingAnchor).isActive = true
         collectionViewForHomeScreen.trailingAnchor.constraint(equalTo: categoriThirdStackView.trailingAnchor).isActive = true
         collectionViewForHomeScreen.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        
-        
-        
         
         //FirstStackView
         categoriFirstStackView.addArrangedSubview(categoriesView)
@@ -707,6 +708,18 @@ extension HomeViewController{
             //valizVeBavulLabel layout
             valizVeBavulLabel.widthAnchor.constraint(equalTo: valizVeBavulLabelView.widthAnchor),
             valizVeBavulLabel.heightAnchor.constraint(equalTo: valizVeBavulLabelView.heightAnchor),
+            //isBankasiImage layout
+            isBankasiImage.topAnchor.constraint(equalTo: categoriThirdStackView.bottomAnchor, constant: 8),
+            //isBankasiImage.bottomAnchor.constraint(equalTo: isBankasiCoins.topAnchor, constant: -2),
+            isBankasiImage.heightAnchor.constraint(equalToConstant: 43),
+            isBankasiImage.leadingAnchor.constraint(equalTo: collectionViewForHomeScreen.leadingAnchor),
+            isBankasiImage.trailingAnchor.constraint(equalTo: collectionViewForHomeScreen.trailingAnchor),
+            isBankasiCoins.topAnchor.constraint(equalTo: isBankasiImage.bottomAnchor, constant: 2),
+            isBankasiCoins.leadingAnchor.constraint(equalTo: collectionViewForHomeScreen.leadingAnchor),
+            isBankasiCoins.bottomAnchor.constraint(equalTo: collectionViewForHomeScreen.topAnchor, constant: -8),
+            isBankasiCoins.trailingAnchor.constraint(equalTo: collectionViewForHomeScreen.trailingAnchor),
+            isBankasiCoins.heightAnchor.constraint(equalToConstant: 43),
+            
         ])
     }
     private func makeStackViewButtons(with image:UIImage?,and title:String, vc:UIViewController) -> UINavigationController {
