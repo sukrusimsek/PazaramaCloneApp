@@ -95,24 +95,18 @@ class HomeViewController: UIViewController {
         collectionViewForHomeScreen.register(CustomCellForHomeScreen.self, forCellWithReuseIdentifier: "cell")
     }
 }
-    
-
-
 //MARK: - Helpers
 extension HomeViewController{
     private func style(){
         //appBrandLogo style
         appBrandLogo.translatesAutoresizingMaskIntoConstraints = false
         appBrandLogo.image = UIImage(named: "logopng.png")
-        
-        
         //productSearchTextField style
         productSearchTextField.translatesAutoresizingMaskIntoConstraints = false
         productSearchTextField.placeholder = "Marka, ürün veya hizmet arayın"
         productSearchTextField.borderStyle = .roundedRect
         productSearchTextField.textColor = .black
         productSearchTextField.font = .systemFont(ofSize: 13)
-        
         //searchLeftImageView style
         let searchLeftImageView = UIImageView(frame: CGRect(x: 8.0, y: 6.0, width: 24.0, height: 24.0))
         searchLeftImageView.image = iconLeft
@@ -121,12 +115,10 @@ extension HomeViewController{
         productSearchTextField.leftViewMode = .always
         productSearchTextField.isOpaque = true
         productSearchTextField.addSubview(searchLeftImageView)
-        
         //searchPlaceHolder padding style
         let paddingView = UIView(frame: CGRectMake(0, 0, 30, self.productSearchTextField.frame.height))
         productSearchTextField.leftView = paddingView
         productSearchTextField.leftViewMode = UITextField.ViewMode.always
-        
         //searchRightImageView style
         let searchRightImageView = UIImageView(frame: CGRect(x: 341.0, y: 6.0, width: 24.0, height: 24.0))
         searchRightImageView.image = iconRight
@@ -135,41 +127,33 @@ extension HomeViewController{
         productSearchTextField.leftViewMode = .always
         productSearchTextField.isOpaque = true
         productSearchTextField.addSubview(searchRightImageView)
-        
         //favoriteProductsButton style
         favoriteProductsButton.translatesAutoresizingMaskIntoConstraints = false
         favoriteProductsButton.setImage(UIImage(named: "favoriteProductsIcon"), for: .normal)
         //notificationsButton style
         notificationsButton.translatesAutoresizingMaskIntoConstraints = false
         notificationsButton.setImage(UIImage(named: "notificationHomeScreen"), for: .normal)
-        
         //pazaramaCuzdan style
         pazaramaWalletButton.translatesAutoresizingMaskIntoConstraints = false
         pazaramaWalletButton.setImage(UIImage(named: "pazaramacuzdan"), for: .normal)
-        
-        
         //categoriFirstStackView style
         categoriFirstStackView.translatesAutoresizingMaskIntoConstraints = false
         categoriFirstStackView.spacing = 8
         categoriFirstStackView.axis = .horizontal
         categoriFirstStackView.layer.cornerRadius = 5
         categoriFirstStackView.alignment = .center
-        
         //categoriSecondStackView style
         categoriSecondStackView.translatesAutoresizingMaskIntoConstraints = false
         categoriSecondStackView.spacing = 8
         categoriSecondStackView.axis = .horizontal
         categoriSecondStackView.layer.cornerRadius = 5
         categoriSecondStackView.alignment = .center
-
         //categoriThirdStackView style
         categoriThirdStackView.translatesAutoresizingMaskIntoConstraints = false
         categoriThirdStackView.spacing = 8
         categoriThirdStackView.axis = .horizontal
         categoriThirdStackView.layer.cornerRadius = 5
         categoriSecondStackView.alignment = .center
-
-        
         //FirstStackView
         //categoriesView style
         categoriesView.translatesAutoresizingMaskIntoConstraints = false
@@ -239,8 +223,6 @@ extension HomeViewController{
         petLabel.font = .boldSystemFont(ofSize: 10)
         petLabel.textColor = .black
         petLabel.textAlignment = .center
-        
-        
         //SecondStackView
         //bestSellerView style
         bestSellerView.translatesAutoresizingMaskIntoConstraints = false
@@ -258,7 +240,6 @@ extension HomeViewController{
         superCekilisView.translatesAutoresizingMaskIntoConstraints = false
         superCekilisView.backgroundColor = UIColor(rgb: 0xd9d9d9)
         superCekilisView.layer.cornerRadius = 5
-        
         //bestSellerButton style
         bestSellerButton.translatesAutoresizingMaskIntoConstraints = false
         bestSellerButton.setImage(UIImage(named: "pazaramacoksatanlar"), for: .normal)
@@ -271,7 +252,6 @@ extension HomeViewController{
         //superCekilisButton style
         superCekilisButton.translatesAutoresizingMaskIntoConstraints = false
         superCekilisButton.setImage(UIImage(named: "pazaramasupercekilis"), for: .normal)
-        
         //bestSellerLabelView style
         bestSellerLabelView.translatesAutoresizingMaskIntoConstraints = false
         bestSellerLabelView.layer.cornerRadius = 5
@@ -312,7 +292,6 @@ extension HomeViewController{
         superCekilisLabel.font = .boldSystemFont(ofSize: 10)
         superCekilisLabel.textColor = .black
         superCekilisLabel.textAlignment = .center
-        
         //ThirdStackView
         //indiriminSuperiView style
         indiriminSuperiView.translatesAutoresizingMaskIntoConstraints = false
@@ -330,7 +309,6 @@ extension HomeViewController{
         valizVeBavulView.translatesAutoresizingMaskIntoConstraints = false
         valizVeBavulView.backgroundColor = UIColor(rgb: 0xd9d9d9)
         valizVeBavulView.layer.cornerRadius = 5
-        
         //indiriminSuperiButton style
         indiriminSuperiButton.translatesAutoresizingMaskIntoConstraints = false
         indiriminSuperiButton.setImage(UIImage(named: "pazaramaindiriminsuperi"), for: .normal)
@@ -343,7 +321,6 @@ extension HomeViewController{
         //valizVeBavulButton style
         valizVeBavulButton.translatesAutoresizingMaskIntoConstraints = false
         valizVeBavulButton.setImage(UIImage(named: "pazaramavaliz"), for: .normal)
-        
         //indiriminSuperiLabelView style
         indiriminSuperiLabelView.translatesAutoresizingMaskIntoConstraints = false
         indiriminSuperiLabelView.layer.cornerRadius = 5
@@ -360,7 +337,6 @@ extension HomeViewController{
         valizVeBavulLabelView.translatesAutoresizingMaskIntoConstraints = false
         valizVeBavulLabelView.layer.cornerRadius = 5
         valizVeBavulLabelView.backgroundColor = UIColor(rgb: 0xffffff)
-        
         //indiriminSuperiLabel style
         indiriminSuperiLabel.translatesAutoresizingMaskIntoConstraints = false
         indiriminSuperiLabel.text = "İndirimin Süperi"
@@ -389,13 +365,11 @@ extension HomeViewController{
         valizVeBavulLabel.textColor = .black
         valizVeBavulLabel.textAlignment = .center
         valizVeBavulLabel.backgroundColor = .clear
-        
         //isBankasiImage style
         isBankasiImage.translatesAutoresizingMaskIntoConstraints = false
         isBankasiImage.image = UIImage(named: "pazaramaistirak")
         isBankasiImage.layer.cornerRadius = 5
         isBankasiImage.clipsToBounds = true
-        
         //isBankasiCoins style
         isBankasiCoins.translatesAutoresizingMaskIntoConstraints = false
         isBankasiCoins.setImage(UIImage(named: "pazaramacoins"), for: .normal)
@@ -403,15 +377,14 @@ extension HomeViewController{
         isBankasiCoins.clipsToBounds = true
         isBankasiCoins.addTarget(self, action: #selector(handleLoginButtonTapped), for: .touchUpInside)
         
-        
         }
-    @objc private func handleLoginButtonTapped() {
-        print("Button Tapped")
-        let createVC = CreateWalletScreenController()
-        createVC.modalTransitionStyle = .coverVertical
-        present(createVC, animated: true)
-        
-    }
+        @objc private func handleLoginButtonTapped() {
+            print("Button Tapped")
+            let createVC = CreateWalletScreenController()
+            createVC.modalTransitionStyle = .coverVertical
+            present(createVC, animated: true)
+            
+        }
     private func layout(){
         view.addSubview(productSearchTextField)
         view.addSubview(appBrandLogo)
