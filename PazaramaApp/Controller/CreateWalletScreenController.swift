@@ -57,7 +57,7 @@ extension CreateWalletScreenController {
         createWalletDescriptionLabel.textAlignment = .center
         //closeButtonForWalletScreen style
         closeButtonForWalletScreen.translatesAutoresizingMaskIntoConstraints = false
-        closeButtonForWalletScreen.setImage(UIImage(systemName: "xmark"), for: UIControl.State.normal)
+        closeButtonForWalletScreen.setImage(UIImage(systemName: "xmark"), for: .normal)
         //textViewsStackView style
         textFieldsStackView.translatesAutoresizingMaskIntoConstraints = false
         textFieldsStackView.axis = .vertical
@@ -163,13 +163,7 @@ extension CreateWalletScreenController {
         createWalletFinishButton.layer.masksToBounds = true
         
     }
-    /*func textFields(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if let text = textField.text as NSString? {
-            let txtAfterUpdate = text.replacingCharacters(in: range, with: string)
-            textField.text = txtAfterUpdate
-        }
-        return false
-    }*/
+    
     
     func createToolBar() -> UIToolbar {
         let toolbar = UIToolbar()

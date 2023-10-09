@@ -71,7 +71,6 @@ extension WalletController {
         walletImageView.image = UIImage(named: "walletImage")
         walletImageView.layer.cornerRadius = 10
         walletImageView.clipsToBounds = true
-        
         //pazaramaWelcomeLabel style
         pazaramaWelcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         pazaramaWelcomeLabel.text = "Pazarama Cüzdan'a Hos Geldiniz"
@@ -85,10 +84,6 @@ extension WalletController {
         campaingInWallet.textColor = .white
         campaingInWallet.textAlignment = .center
         campaingInWallet.font = .boldSystemFont(ofSize: 13)
-        //createWalletButton style
-        //createWalletButton.setTitle("Cüzdan Oluştur", for: .normal)
-        //createWalletButton.layer.cornerRadius = 3
-        //descriptionForWallet style
         descriptionForWallet.translatesAutoresizingMaskIntoConstraints = false
         descriptionForWallet.textColor = .white
         

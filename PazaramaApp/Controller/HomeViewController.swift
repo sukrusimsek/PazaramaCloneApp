@@ -69,8 +69,11 @@ class HomeViewController: UIViewController {
     private let saatVeSaatLabel = UILabel()
     private let valizVeBavulLabel = UILabel()
     private let isBankasiImage = UIImageView()
-    private let isBankasiCoins = UIImageView()
+    private let isBankasiCoins = UIButton()
     let imagesForSurprise = ["1","2","3","4","5","6","7"]
+    
+    
+    
     
     var collectionViewForHomeScreen: UICollectionView!
     
@@ -395,10 +398,18 @@ extension HomeViewController{
         
         //isBankasiCoins style
         isBankasiCoins.translatesAutoresizingMaskIntoConstraints = false
-        isBankasiCoins.image = UIImage(named: "pazaramacoins")
+        isBankasiCoins.setImage(UIImage(named: "pazaramacoins"), for: .normal)
         isBankasiCoins.layer.cornerRadius = 5
         isBankasiCoins.clipsToBounds = true
+        isBankasiCoins.addTarget(self, action: #selector(handleLoginButtonTapped), for: .touchUpInside)
         
+        
+        }
+    @objc private func handleLoginButtonTapped() {
+        print("Button Tapped")
+        let createVC = CreateWalletScreenController()
+        createVC.modalTransitionStyle = .coverVertical
+        present(createVC, animated: true)
         
     }
     private func layout(){
@@ -407,18 +418,23 @@ extension HomeViewController{
         view.addSubview(pazaramaWalletButton)
         view.addSubview(notificationsButton)
         view.addSubview(favoriteProductsButton)
+        
         view.addSubview(categoriFirstStackView)
         view.addSubview(categoriSecondStackView)
         view.addSubview(categoriThirdStackView)
         view.addSubview(isBankasiImage)
         view.addSubview(isBankasiCoins)
         
+        
+        
+        
+        
         let layout1 = UICollectionViewFlowLayout()
         collectionViewForHomeScreen = UICollectionView(frame: .zero, collectionViewLayout: layout1)
         view.addSubview(collectionViewForHomeScreen)
         collectionViewForHomeScreen.translatesAutoresizingMaskIntoConstraints = false
         
-        //collectionViewForHomeScreen.topAnchor.constraint(equalTo: isBankasiImage.bottomAnchor, constant: 8).isActive = true
+        //collectionViewForHomeScreen.topAnchor.constraint(equalTo: isBankasiImage.bottomAnchor, constant: 8)
         collectionViewForHomeScreen.leadingAnchor.constraint(equalTo: categoriThirdStackView.leadingAnchor).isActive = true
         collectionViewForHomeScreen.trailingAnchor.constraint(equalTo: categoriThirdStackView.trailingAnchor).isActive = true
         collectionViewForHomeScreen.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -476,6 +492,7 @@ extension HomeViewController{
         valizVeBavulLabelView.addSubview(valizVeBavulLabel)
         
         NSLayoutConstraint.activate([
+           
             //favoriteProductsButton layout
             favoriteProductsButton.leadingAnchor.constraint(equalTo: notificationsButton.trailingAnchor, constant: 8),
             favoriteProductsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
