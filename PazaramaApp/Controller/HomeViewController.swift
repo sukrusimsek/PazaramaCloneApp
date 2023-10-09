@@ -92,24 +92,18 @@ class HomeViewController: UIViewController {
         collectionViewForHomeScreen.register(CustomCellForHomeScreen.self, forCellWithReuseIdentifier: "cell")
     }
 }
-    
-
-
 //MARK: - Helpers
 extension HomeViewController{
     private func style(){
         //appBrandLogo style
         appBrandLogo.translatesAutoresizingMaskIntoConstraints = false
         appBrandLogo.image = UIImage(named: "logopng.png")
-        
-        
         //productSearchTextField style
         productSearchTextField.translatesAutoresizingMaskIntoConstraints = false
         productSearchTextField.placeholder = "Marka, ürün veya hizmet arayın"
         productSearchTextField.borderStyle = .roundedRect
         productSearchTextField.textColor = .black
         productSearchTextField.font = .systemFont(ofSize: 13)
-        
         //searchLeftImageView style
         let searchLeftImageView = UIImageView(frame: CGRect(x: 8.0, y: 6.0, width: 24.0, height: 24.0))
         searchLeftImageView.image = iconLeft
@@ -118,12 +112,10 @@ extension HomeViewController{
         productSearchTextField.leftViewMode = .always
         productSearchTextField.isOpaque = true
         productSearchTextField.addSubview(searchLeftImageView)
-        
         //searchPlaceHolder padding style
         let paddingView = UIView(frame: CGRectMake(0, 0, 30, self.productSearchTextField.frame.height))
         productSearchTextField.leftView = paddingView
         productSearchTextField.leftViewMode = UITextField.ViewMode.always
-        
         //searchRightImageView style
         let searchRightImageView = UIImageView(frame: CGRect(x: 341.0, y: 6.0, width: 24.0, height: 24.0))
         searchRightImageView.image = iconRight
@@ -132,7 +124,6 @@ extension HomeViewController{
         productSearchTextField.leftViewMode = .always
         productSearchTextField.isOpaque = true
         productSearchTextField.addSubview(searchRightImageView)
-        
         //favoriteProductsButton style
         favoriteProductsButton.translatesAutoresizingMaskIntoConstraints = false
         favoriteProductsButton.setImage(UIImage(named: "favoriteProductsIcon"), for: .normal)
@@ -165,8 +156,6 @@ extension HomeViewController{
         categoriThirdStackView.axis = .horizontal
         categoriThirdStackView.layer.cornerRadius = 5
         categoriSecondStackView.alignment = .center
-
-        
         //FirstStackView
         //categoriesView style
         categoriesView.translatesAutoresizingMaskIntoConstraints = false
@@ -386,7 +375,6 @@ extension HomeViewController{
         valizVeBavulLabel.textColor = .black
         valizVeBavulLabel.textAlignment = .center
         valizVeBavulLabel.backgroundColor = .clear
-        
         //isBankasiImage style
         isBankasiImage.translatesAutoresizingMaskIntoConstraints = false
         isBankasiImage.image = UIImage(named: "pazaramaistirak")
@@ -398,8 +386,6 @@ extension HomeViewController{
         isBankasiCoins.image = UIImage(named: "pazaramacoins")
         isBankasiCoins.layer.cornerRadius = 5
         isBankasiCoins.clipsToBounds = true
-        
-        
     }
     private func layout(){
         view.addSubview(productSearchTextField)
