@@ -407,7 +407,6 @@ extension HomeViewController{
         view.addSubview(collectionViewForHomeScreen)
         collectionViewForHomeScreen.translatesAutoresizingMaskIntoConstraints = false
         
-        //collectionViewForHomeScreen.topAnchor.constraint(equalTo: isBankasiImage.bottomAnchor, constant: 8)
         collectionViewForHomeScreen.leadingAnchor.constraint(equalTo: categoriThirdStackView.leadingAnchor).isActive = true
         collectionViewForHomeScreen.trailingAnchor.constraint(equalTo: categoriThirdStackView.trailingAnchor).isActive = true
         collectionViewForHomeScreen.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
@@ -634,7 +633,6 @@ extension HomeViewController{
             //petLabel layout
             superCekilisLabel.widthAnchor.constraint(equalTo: superCekilisLabelView.widthAnchor),
             superCekilisLabel.heightAnchor.constraint(equalTo: superCekilisLabelView.heightAnchor),
-            
             //ThirdStackView icons layout
             indiriminSuperiView.widthAnchor.constraint(equalToConstant: 88),
             indiriminSuperiView.heightAnchor.constraint(equalToConstant: 114),
@@ -644,7 +642,6 @@ extension HomeViewController{
             saatVeSaatView.heightAnchor.constraint(equalToConstant: 114),
             valizVeBavulView.widthAnchor.constraint(equalToConstant: 88),
             valizVeBavulView.heightAnchor.constraint(equalToConstant: 114),
-            
             //ThirdStackView
             //indiriminSuperiButton layout
             indiriminSuperiButton.topAnchor.constraint(equalTo: indiriminSuperiView.topAnchor, constant: 2),
@@ -700,7 +697,6 @@ extension HomeViewController{
             valizVeBavulLabel.heightAnchor.constraint(equalTo: valizVeBavulLabelView.heightAnchor),
             //isBankasiImage layout
             isBankasiImage.topAnchor.constraint(equalTo: categoriThirdStackView.bottomAnchor, constant: 8),
-            //isBankasiImage.bottomAnchor.constraint(equalTo: isBankasiCoins.topAnchor, constant: -2),
             isBankasiImage.heightAnchor.constraint(equalToConstant: 43),
             isBankasiImage.leadingAnchor.constraint(equalTo: collectionViewForHomeScreen.leadingAnchor),
             isBankasiImage.trailingAnchor.constraint(equalTo: collectionViewForHomeScreen.trailingAnchor),
@@ -709,13 +705,10 @@ extension HomeViewController{
             isBankasiCoins.bottomAnchor.constraint(equalTo: collectionViewForHomeScreen.topAnchor, constant: -8),
             isBankasiCoins.trailingAnchor.constraint(equalTo: collectionViewForHomeScreen.trailingAnchor),
             isBankasiCoins.heightAnchor.constraint(equalToConstant: 43),
-            
         ])
     }
     private func makeStackViewButtons(with image:UIImage?,and title:String, vc:UIViewController) -> UINavigationController {
         let navi = UINavigationController(rootViewController: vc)
-        
-        
         return navi
         }
     
@@ -725,9 +718,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: view.frame.width - 20, height: view.frame.height/5)
     }
 }
-
 extension HomeViewController: UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imagesForSurprise.count
     }
@@ -736,16 +727,12 @@ extension HomeViewController: UICollectionViewDataSource {
         cell.imageView.image = UIImage(named: imagesForSurprise[indexPath.row])
         return cell
     }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Detay Sayfasına Gidilecek Home Screen \(indexPath.row)")
     }
 }
-
-
 class CustomCellForHomeScreen: UICollectionViewCell {
     let imageView = UIImageView()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(imageView)
@@ -757,15 +744,12 @@ class CustomCellForHomeScreen: UICollectionViewCell {
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
         ])
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
 extension UIColor {
     convenience init(rgb: UInt) {
         self.init(
@@ -776,6 +760,3 @@ extension UIColor {
         )
     }
 }
-
-
-
